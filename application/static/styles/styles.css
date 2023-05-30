@@ -19,17 +19,16 @@ h1 {
 
 h2 {
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
-h3 {
+h3, p {
     text-align: left;
     font-size: 1em;
 }
 
-p {
-    text-align: left;
-    font-size: 1em;
+.benefit {
+    text-align: center;
 }
 
 ul {
@@ -43,9 +42,14 @@ span {
 
 .carousel {
     width:350px;
-    align-items: center;
   }
  
-
+button {
+    padding: 10px 20px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 1em;
+  }
+  
   
   

@@ -9,11 +9,11 @@
             <h2>Can I line-dry my laundry today?</h2>
 
             {% if rain_risk == 'low' %}
-            <button type="button" class="btn btn-outline-success"><span>Hang Out your Laundry</span> {{ rain }}</button>
+            <button type="button" class="btn btn-outline-success">&#127774;<span>Hang Out your Laundry&#127774;</span><br> {{ rain }}</button>
             {% elif rain_risk == 'high' %}
-            <button type="button" class="btn btn-outline-danger"><span>Watch out for rain today</span> {{ rain }}</button>
+            <button type="button" class="btn btn-outline-danger">&#127783;<span>Watch out &#127783;</span><br> {{ rain }}</button>
             {% else %}
-            <button type="button" class="btn btn-outline-info"><span>Risky, it might rain</span> {{ rain }}</button>
+            <button type="button" class="btn btn-outline-info">&#9925;<span>Risky &#9925;</span><br> {{ rain }}</button>
             {% endif %}
 
             <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight. This way, you can channel your time and energy into something extra creative or enjoyable. Isn't it wonderful to find such simple ways to brighten our day?</p>
@@ -49,10 +49,11 @@
             
             <h3>Benefits of Line Drying</h3>
             
-            <p>This is a &#8986;time-saver and a &#128176;money saver <span>BUT...</span> only if it doesn't &#127783;!
+            <p class="benefit">This is a time-saver and a &#128176;money saver <br><span>BUT only if</span> it doesn't &#127783;!
                 <ul>
-                    <li>&#10084;save time (& your own sanity) by not being subject to the beep on the dryer</li>
-                    <li>&#10084;save energy by not running the dryer</li>
+                    <li>&#129505; <span>save time</span> (& your own sanity) by not being subject to the beep on the dryer</li>
+                    <li>&#129505; <span>save energy</span> </li>
+                    <li>&#129505; <span>save money&#128176;</span> by not running the dryer</li>
                 </ul>
             </p>
 

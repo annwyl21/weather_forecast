@@ -6,5 +6,5 @@ from application.rain import Rain
 def index():
     rain = Rain(20)
     rain_risk = 'low'
-    return render_template('index.html', title='Home', rain=rain, rain_risk=rain_risk)
+    return render_template('index.html', title='Line-dried Laundry', rain=rain, rain_risk=rain_risk)
 
