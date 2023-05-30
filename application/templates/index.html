@@ -2,8 +2,62 @@
 
 {% block main_content %}
 
-<div>
-    <img src="{{ url_for('static', filename='images/laundry.jpg') }}" alt="line drying laundry">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h1>line-dried laundry</h1>
+            <h2>Can I line-dry my laundry today?</h2>
+
+            {% if rain_risk == 'low' %}
+            <button type="button" class="btn btn-outline-success"><span>Hang Out your Laundry</span> {{ rain }}</button>
+            {% elif rain_risk == 'high' %}
+            <button type="button" class="btn btn-outline-danger"><span>Watch out for rain today</span> {{ rain }}</button>
+            {% else %}
+            <button type="button" class="btn btn-outline-info"><span>Risky, it might rain</span> {{ rain }}</button>
+            {% endif %}
+
+            <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight. This way, you can channel your time and energy into something extra creative or enjoyable. Isn't it wonderful to find such simple ways to brighten our day?</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6"></div>
+            <!-- carousel of line-drying laundry images -->
+            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='images/laundry2small.jpg') }}" class="d-block w-100" alt="line drying laundry">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='images/laundry1small.jpg') }}" class="d-block w-100" alt="line drying laundry">
+                  </div>
+                  <!-- <div class="carousel-item">
+                    <img src="..." class="d-block w-100" alt="...">
+                  </div> -->
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <div class="col-3"></div>
+        </div>
+            
+            <h3>Benefits of Line Drying</h3>
+            
+            <p>This is a &#8986;time-saver and a &#128176;money saver <span>BUT...</span> only if it doesn't &#127783;!
+                <ul>
+                    <li>&#10084;save time (& your own sanity) by not being subject to the beep on the dryer</li>
+                    <li>&#10084;save energy by not running the dryer</li>
+                </ul>
+            </p>
+
+        </div>
+    </div>
 </div>
 
 {% endblock %}

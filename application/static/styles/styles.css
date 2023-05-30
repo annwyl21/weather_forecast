@@ -1,4 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
+
 body {
-    background: linear-gradient(white, rgb(233, 182, 199));
-    color: #292b2c;
+    background: linear-gradient(pink, white);
+    font-family: 'Dosis', sans-serif;
+    color: navy;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
+
 }
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Rubik Puddles', cursive;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1em;
+}
+
+h3 {
+    text-align: left;
+    font-size: 1em;
+}
+
+p {
+    text-align: left;
+    font-size: 1em;
+}
+
+ul {
+    list-style-type: none;
+  }
+  
+span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.carousel {
+    width:350px;
+    align-items: center;
+  }
+ 
+
+  
+  
