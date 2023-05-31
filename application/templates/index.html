@@ -8,11 +8,11 @@
             
             <!-- Rain Forecast Button -->
             {% if rain_risk == 'low' %}
-            <button type="button" class="btn btn-success">&#127774;<span>Hang Out your Laundry&#127774;</span><br> {{ rain }}</button>
+            <button type="button" class="btn btn-success">&#127774;<span>Hang out your Laundry&#127774;</span><br>{{ rain }}</button>
             {% elif rain_risk == 'high' %}
-            <button type="button" class="btn btn-danger">&#127783;<span>Watch out &#127783;</span><br> {{ rain }}</button>
+            <button type="button" class="btn btn-danger">&#127783;<span>Watch out &#127783;</span><br>{{ rain }}</button>
             {% else %}
-            <button type="button" class="btn btn-info">&#9925;<span>Risky &#9925;</span><br> {{ rain }}</button>
+            <button type="button" class="btn btn-info">&#9925;<span>Risky &#9925;</span><br>{{ rain }}</button>
             {% endif %}
 
             <!-- Add in location choice here -->
@@ -23,21 +23,23 @@
                 <h1 class="overlay-text">line-dried laundry</h1>
             </div>
 
+            <!-- Button for weather detail -->
+            <a class="btn btn-orange" href="./detail" role="button">Weather Details</a>
+
             <!-- Introduction to Page -->
-            <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight. So that you can channel your time and energy into something extra creative or enjoyable. Isn't it wonderful to find such simple ways to brighten our day?</p>
-            <p>
+            <p><br>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight.</p>
+            <!-- <p>
                 <ul>
                     <li>&#129505; <span>save time</span> (& your own sanity) by not being subject to the beep on the dryer</li>
                     <li>&#129505; <span>save energy</span> </li>
                     <li>&#129505; <span>save money&#128176;</span> by not running the dryer</li>
                 </ul>
-            </p>
+            </p> -->
         </div>
     </div>
 
     <!-- Images of line-drying laundry -->
     <div class="row">
-        <h3>Actual laundry drying in the garden</h3>
         <div class="col-3"></div>
         <div class="col-6"></div>
             <!-- carousel -->

@@ -20,9 +20,18 @@ class Rain:
         # Hyde Park, London 51.5073° N, 0.1657° W
         res = conn.getresponse()
         data = res.read()
-        retrieved_data = data.decode("utf-8")
-        print(retrieved_data)
-        
+        data_string = data.decode("utf-8")
+        weather_data = data_string.split(',')
+        print(weather_data[0])
+
+        # for feature in weather_data['features']:
+        #     for time_series in feature['properties']['timeSeries']:
+        #         temp = time_series['dayMaxScreenTemperature']
+        #         max_temp = time_series['dayUpperBoundMaxTemp']
+        #         min_temp = time_series['dayLowerBoundMaxTemp']
+        #         rain_prob = time_series['nightProbabilityOfPrecipitation']
+        #         print(temp, max_temp, min_temp, rain_prob)
+         
 
     def set_rain_forecast(self, rain_forecast):
         self.rain_forecast = rain_forecast

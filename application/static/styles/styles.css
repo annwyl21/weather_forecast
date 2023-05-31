@@ -2,9 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 
 body {
-    background: linear-gradient(green, white);
+    background: linear-gradient(#9EC1A3, white);
     font-family: 'Dosis', sans-serif;
-    color: white;
+    color: #192A51;
     margin-top: 30px;
     margin-left: 10px;
     margin-right: 10px;
@@ -48,6 +48,27 @@ button {
     width: 100%;
     font-size: 1em;
   }
+
+  .btn-orange {
+    background-color: #EB8258; /* The background color */
+    border: none; /* Remove border if any */
+    color: #192A51; /* The text color */
+    text-align: center; /* Align the text to the center */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display it as inline block */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Change cursor on hover */
+    transition: all 0.5s; /* Add transition */
+    padding: 10px 24px; /* Padding */
+    width: 100%;
+}
+
+.btn-orange:hover {
+    background-color: #AAA1C8; /* Change the background color on hover */
+    color: #192A51; /* Keep the text color to be white */
+}
+
   
 footer {
     text-align: center;
