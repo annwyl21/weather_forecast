@@ -4,9 +4,15 @@ from application.rain import Rain
 
 @app.route('/')
 def index():
-    rain = 85
-    rain_risk = 'low'
-    return render_template('index.html', title='Line-dried Laundry', rain=rain, rain_risk=rain_risk)
+    forecast_instance = Rain.set_weather('London')
+    rain_probability = forecast_instance.get_today_rain_prob()
+    if rain_probability <= 25:
+        rain_risk = 'low'
+    elif rain_probability >= 50:
+        rain_risk = 'high'
+    else:
+        rain_risk = 'medium'
+    return render_template('index.html', title='Line-dried Laundry', today=forecast_instance, rain_risk = rain_risk)
 
 @app.route('/detail')
 def details():

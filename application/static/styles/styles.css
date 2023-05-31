@@ -50,7 +50,7 @@ button {
   }
 
   .btn-orange {
-    background-color: #EB8258; /* The background color */
+    background-color: #aaa1c8; /* The background color */
     border: none; /* Remove border if any */
     color: #192A51; /* The text color */
     text-align: center; /* Align the text to the center */
@@ -81,7 +81,7 @@ footer {
 img {
     padding-top: 25px;
     padding-bottom: 25px;
-    border-radius: 25%;
+    border-radius: 50%;
 }
 
 .image-container {
