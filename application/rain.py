@@ -2,10 +2,11 @@ import http.client
 import os
 
 conn = http.client.HTTPSConnection("api-metoffice.apiconnect.ibmcloud.com")
+userid = os.environ.get('X-IBM-Client-Id')
 key = os.environ.get('X-IBM-Client-Secret')
 
 headers = {
-    'X-IBM-Client-Id': "67f445dc99b806786612650f29278d1c",
+    'X-IBM-Client-Id': userid,
     'X-IBM-Client-Secret': key,
     'accept': "application/json"
     }
@@ -16,7 +17,6 @@ class Rain:
 
     def get_rain_forecast(self):
         conn.request("GET", '/v0/forecasts/point/daily?latitude=51.5073&longitude=0.1657&Metadata=true', headers=headers)
-        # "/v0/forecasts/point/daily?excludeParameterMetadata=REPLACE_THIS_VALUE&includeLocationName=REPLACE_THIS_VALUE&latitude=REPLACE_THIS_VALUE&longitude=REPLACE_THIS_VALUE"
         # Hyde Park, London 51.5073° N, 0.1657° W
         res = conn.getresponse()
         data = res.read()
