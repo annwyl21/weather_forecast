@@ -63,42 +63,16 @@ class Rain:
         self.overmorrow_temp = int(weather_overmorrow['dayMaxScreenTemperature'])
         self.overmorrow_rain_prob = int(weather_overmorrow['nightProbabilityOfPrecipitation'])
 
-    def get_yesterday_temp(self):
-        return self.yesterday_temp
-    
-    def get_yesterday_max_temp(self):
-        return self.yesterday_max_temp
-    
-    def get_yesterday_min_temp(self):
-        return self.yesterday_min_temp
-    
-    def get_yesterday_rain_prob(self):
-        return self.yesterday_rain_prob
-    
-    def get_today_temp(self):
-        return self.today_temp
-    
-    def get_today_max_temp(self):
-        return self.today_max_temp
-    
-    def get_today_min_temp(self):
-        return self.today_min_temp
-    
-    def get_today_rain_prob(self):
-        return self.today_rain_prob
-    
-    def get_tomorrow_temp(self):
-        return self.tomorrow_temp
-    
-    def get_tomorrow_rain_prob(self):
-        return self.tomorrow_rain_prob
-    
-    def get_overmorrow_temp(self):
-        return self.overmorrow_temp
-    
-    def get_overmorrow_rain_prob(self):
-        return self.overmorrow_rain_prob
+        if self.yesterday_rain_prob < 25 and self.today_rain_prob < 25 and self.tomorrow_rain_prob < 25 and self.overmorrow_rain_prob < 25:
+            self.dry_spell = True
+        
+        if self.today_rain_prob >25:
+            self.rainy_day = True
 
+        if self.today_temp > 25:
+            self.hot_day = True
+        elif self.today_temp < 10:
+            self.cold_day = True
 
 
 if __name__ == "__main__":

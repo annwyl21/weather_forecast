@@ -4,9 +4,13 @@
 
 <div class="accordion accordion-flush" id="accordionFlushExample">
     <div class="accordion-item">
-      <h2 class="accordion-header" id="laundry">
+      <h2 class="accordion-header" id="flush-headingOne">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-          &#127774; Hang out your laundry
+          {% if weather_forecast.rainy_day == True %}
+          &#128167; Don't hang out your laundry
+            {% else %}
+            &#127774; Hang out your laundry
+            {% endif %}
         </button>
       </h2>
       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -22,12 +26,18 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="flush-headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          &#129716; Water your plants
+          {% if weather_forecast.dry_spell == True %}
+            &#129716; Water your plants
+            {% else %}
+            &#128167; Don't water your plants
+            {% endif %}
         </button>
       </h2>
       <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
             &#x1fab4;
+            <br>
+            It looks like we are having a dry spell
             <br>
             Yesterday was dry
             <br>
@@ -42,12 +52,26 @@
     <div class="accordion-item">
       <h2 class="accordion-header" id="flush-headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-          &#128021; Walk the dog
+          {% if weather_forecast.hot_day == True %}
+            &#128021; Walk the dog early today
+            {% else %}
+            &#x1F415; Walk the dog at lunchtime
+            {% endif %}
         </button>
       </h2>
       <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
+            {% if weather_forecast.hot_day == True %}
+            &#128021; Walk the dog early today
+            <br>
+            Dogs don't need to walk every day if the weather is too hot &#127774;
+            <br>
+            &#128688; Your dog will need a full water bowl today &#128688;
+            {% elif weather_forecast.cold_day == True %}
+            &#x1F415; Pop a coat on the dog, its chilly out there
+            {% else %}
             The weather today is pleasant for &#x1F415; walking at {{ weather_forecast.today_temp }}&#x2103;
+            {% endif %}
         </div>
       </div>
     </div>
