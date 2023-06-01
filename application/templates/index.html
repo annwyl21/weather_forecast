@@ -3,69 +3,29 @@
 {% block main_content %}
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            
-            <!-- Rain Forecast Button -->
-            {% if rain_risk == 'low' %}
-            <button type="button" class="btn btn-success">&#127774;<span>Hang out your Laundry&#127774;</span><br>{{ forecast_instance.get_today_temp() }}&#x2103;</button>
-            {% elif rain_risk == 'high' %}
-            <button type="button" class="btn btn-danger">&#127783;<span>Watch out &#127783;</span><br>{{ today['rain_prob'] }}% chance of rain</button>
-            {% else %}
-            <button type="button" class="btn btn-info">&#9925;<span>Risky &#9925;</span><br>{{ forecast_instance.get_today_rain_prob() }}% chance of rain</button>
-            {% endif %}
 
-            <!-- Add in location choice here -->
+  <!-- Page Title -->
+  <div class="image-container">
+      <img src="{{ url_for('static', filename='images/laundry_long.png') }}" alt="line drying laundry" class="img-fluid">
+      <h1 class="overlay-text">line-dried laundry</h1>
+  </div>
 
-            <!-- Page Title -->
-            <div class="image-container">
-                <img src="{{ url_for('static', filename='images/laundry_long.png') }}" alt="line drying laundry" class="img-fluid">
-                <h1 class="overlay-text">line-dried laundry</h1>
-            </div>
+  <!-- Introduction to Page -->
+  <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight.</p>
 
-            <!-- Introduction to Page -->
-            <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight.</p>
-
-            <!-- Button for weather detail -->
-            <a class="btn btn-orange" href="./detail" role="button">{{ forecast_instance.get_today_min_temp() }} - {{ forecast_instance.get_today_max_temp() }}&#x2103;</a>
-
-
-            <!-- <p>
-                <ul>
-                    <li>&#129505; <span>save time</span> (& your own sanity) by not being subject to the beep on the dryer</li>
-                    <li>&#129505; <span>save energy</span> </li>
-                    <li>&#129505; <span>save money&#128176;</span> by not running the dryer</li>
-                </ul>
-            </p> -->
-        </div>
-    </div>
-
-    <!-- Images of line-drying laundry -->
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6"></div>
-            <!-- carousel -->
-            <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{{ url_for('static', filename='images/laundry2small.jpg') }}" class="d-block w-100" alt="line drying laundry">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ url_for('static', filename='images/laundry1small.jpg') }}" class="d-block w-100" alt="line drying laundry">
-                  </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-              <div class="col-3"></div>
-        </div>
-    </div>
+  <!-- Add in location choice here -->
+  {{ error_message }}
+  <div class="'form">
+    <form method="'POST" action="">
+      {{ form.hidden_tag() }}
+      <select class="form-select" aria-label="Choose your location" name="location" selected>
+        {% for location in form.location %}
+        {{ location }}
+        {% endfor %}
+      </select>
+      <button type="submit" class="btn btn-primary submit">Submit</button>
+    </form>
+  </div>
 </div>
 
 {% endblock %}

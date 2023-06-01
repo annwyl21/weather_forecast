@@ -1,19 +1,27 @@
-from flask import render_template
+from flask import render_template, request
 from application import app
-from application.rain import Rain
+from application.rain import Rain, get_weather_data
+from application.form import LocationForm
 
 @app.route('/')
 def index():
-    forecast_instance = Rain.set_weather('London')
-    rain_probability = forecast_instance.get_today_rain_prob()
-    if rain_probability <= 25:
-        rain_risk = 'low'
-    elif rain_probability >= 50:
-        rain_risk = 'high'
-    else:
-        rain_risk = 'medium'
-    return render_template('index.html', title='Line-dried Laundry', today=forecast_instance, rain_risk = rain_risk)
+    error_message = ''
+    form = LocationForm()
+    if request.method == 'POST':
+        location = form.location.data
+        
+        if form.location.data == 'london':
+            weather_forecast = Rain(get_weather_data())
+            
+        elif form.location.data == 'oxford':
+            weather_forecast = Rain(get_weather_data())
+            
+        elif form.location.data == 'cambridge':
+            weather_forecast = Rain(get_weather_data())
+            
+        else:
+            error_message = 'An error has occurred. Please try again.'
+        
+        return render_template('detail.html', title='Weather Details', weather_forecast=weather_forecast)
 
-@app.route('/detail')
-def details():
-    return render_template('detail.html', title='Weather Details')
+    return render_template('index.html', title='Line-dried Laundry', form=form, error_message=error_message)
