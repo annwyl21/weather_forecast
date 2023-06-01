@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 
-/* Colors */
-/* {"Rose quartz":"aaa1c8","Mountbatten pink":"967aa1","Coral":"eb8258","Cambridge blue":"9ec1a3","Space cadet":"192a51"} */
+:root {
+    --primary-color: #243010;
+    --secondary-color: #f7b32b;
+    --tertiary-color: #2a3c24;
+    --quaternary-color: #55aa00;
+    --quinary-color: #ffffff;
+}
 
 body {
     font-family: 'Dosis', sans-serif;
-    color: white;
-    background-color: #55aa00;
+    color: var(--quinary-color, white);
+    background-color: var(--quaternary-color, gray);
     margin-top: 40%;
 }
 
@@ -21,28 +26,22 @@ p {
     text-align: center;
     font-size: 1em;
 }
-  
-span {
-    font-weight: bold;
-    font-size: 1.2em;
-}
 
-  .btn-primary {
-    background-color: #243010; /* The background color */
-    border: none; /* Remove border if any */
-    text-align: center; /* Align the text to the center */
-    font-size: 1em; /* Increase font size */
-    margin: 10px 2px; /* Add some margin */
+.btn-primary {
+    background-color: var(--primary-color, pink);
+    border: none; /* Remove border */
+    text-align: center;
+    font-size: 1em;
+    margin: 10px 2px;
     width: 100%;
 }
 
 .accordion-button:not(.collapsed) {
-  color: #2a3c24;
-  background-color: #f7b32b;
+  color: var(--tertiary-color, black);
+  background-color: var(--secondary-color, yellow);
 }
 
 footer {
-    text-align: center;
     font-size: 0.5em;
     margin: 10px;
 }
@@ -58,7 +57,7 @@ img {
   }
   
   .image-container img {
-    border-radius: 50%;
+    border-radius: 50%; /* make the image round */
     opacity: 0.4;
   }
   
@@ -67,6 +66,6 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* centering the text */
-    color: white; /* change this depending on your image */
+    color: var(--quinary-color, white);
   }
   
