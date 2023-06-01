@@ -4,7 +4,16 @@ import json
 
 def get_weather_data(location):
     location = location.lower()
-    locations_dict = {'london': [51.5073,0.1657], 'oxford': [51.7520,1.2577], 'cambridge': [52.2053,0.1218]}
+    locations_dict = {
+        'london': [51.5073,0.1657], 
+        'oxford': [51.7520,1.2577], 
+        'cambridge': [52.2053,0.1218],
+        'inverness': [57.4778,4.2247],
+        'poole': [50.7151,1.9873],
+        'aylesbury': [51.8163,0.8124],
+        'colchester': [51.8959,0.8919],
+        }
+
     conn = http.client.HTTPSConnection("api-metoffice.apiconnect.ibmcloud.com")
     userid = os.environ.get('X-IBM-Client-Id')
     key = os.environ.get('X-IBM-Client-Secret')

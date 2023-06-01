@@ -5,12 +5,10 @@
 /* {"Rose quartz":"aaa1c8","Mountbatten pink":"967aa1","Coral":"eb8258","Cambridge blue":"9ec1a3","Space cadet":"192a51"} */
 
 body {
-    background: #9EC1A3;
     font-family: 'Dosis', sans-serif;
-    color: #192A51;
-    margin-top: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
+    color: white;
+    background-color: #55aa00;
+    margin-top: 40%;
 }
 
 h1 {
@@ -29,36 +27,24 @@ span {
     font-size: 1.2em;
 }
 
-  .form-select {
-    margin: 50px 2px;
-  }
-
   .btn-primary {
-    background-color: #aaa1c8; /* The background color */
+    background-color: #243010; /* The background color */
     border: none; /* Remove border if any */
-    color: #192A51; /* The text color */
     text-align: center; /* Align the text to the center */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Display it as inline block */
     font-size: 1em; /* Increase font size */
     margin: 10px 2px; /* Add some margin */
-    cursor: pointer; /* Change cursor on hover */
-    transition: all 0.5s; /* Add transition */
-    padding: 10px 24px; /* Padding */
     width: 100%;
 }
 
-.btn-primary:hover {
-    background-color: #967aa1; /* Change the background color on hover */
-    color: #192A51; /* Keep the text color to be white */
+.accordion-button:not(.collapsed) {
+  color: #2a3c24;
+  background-color: #f7b32b;
 }
 
 footer {
-    text-align: left;
+    text-align: center;
     font-size: 0.5em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #192A51;
+    margin: 10px;
 }
   
 img {
@@ -69,13 +55,11 @@ img {
 
 .image-container {
     position: relative;
-    display: inline-block; /* or "block", depending on your layout needs */
   }
   
   .image-container img {
     border-radius: 50%;
     opacity: 0.4;
-    display: block; /* removes bottom spacing */
   }
   
   .overlay-text {

@@ -10,4 +10,4 @@ def index():
 @app.route('/detail')
 def detail():
     weather_forecast = Rain(get_weather_data('london'))
-    return render_template('detail.html', title='London Weather')
+    return render_template('detail.html', title='London Weather', weather_forecast=weather_forecast)
