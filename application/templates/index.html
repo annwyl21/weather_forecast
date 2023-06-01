@@ -13,18 +13,9 @@
   <!-- Introduction to Page -->
   <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight.</p>
 
-  <!-- Add in location choice here -->
-  {{ error_message }}
-  <div class="'form">
-    <form method="'POST" action="">
-      {{ form.hidden_tag() }}
-      <select class="form-select" aria-label="Choose your location" name="location" selected>
-        {% for location in form.location %}
-        {{ location }}
-        {% endfor %}
-      </select>
-      <button type="submit" class="btn btn-primary submit">Submit</button>
-    </form>
+  <!-- Add 'select' input form for location with submit -->
+  <a class="btn btn-primary" href="./detail" role="button">London Weather</a>
+  
   </div>
 </div>
 

@@ -2,8 +2,6 @@ import http.client
 import os
 import json
 
-
-
 def get_weather_data(location):
     location = location.lower()
     locations_dict = {'london': [51.5073,0.1657], 'oxford': [51.7520,1.2577], 'cambridge': [52.2053,0.1218]}
@@ -17,15 +15,19 @@ def get_weather_data(location):
     'accept': "application/json"
     }
 
-    latitude = locations_dict[location][0]
-    longitude = locations_dict[location][1]
+    latitude = str(locations_dict[location][0])
+    longitude = str(locations_dict[location][1])
+    print(latitude, longitude)
 
     # conn.request("GET", '/v0/forecasts/point/daily?latitude=51.5073&longitude=0.1657&Metadata=true', headers=headers)
     conn.request("GET", '/v0/forecasts/point/daily?latitude=' + latitude + '&longitude=' + longitude + '&Metadata=true', headers=headers)
     # Hyde Park, London 51.5073° N, 0.1657° W
+    print('data request sent to API')
     res = conn.getresponse()
     data = res.read()
     data_string = data.decode("utf-8")
+    print('data received from API')
+    
     json_data = json.loads(data_string)
     return json_data
 
