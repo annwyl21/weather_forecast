@@ -4,7 +4,9 @@ import json
 
 
 
-def get_weather_data():
+def get_weather_data(location):
+    location = location.lower()
+    locations_dict = {'london': [51.5073,0.1657], 'oxford': [51.7520,1.2577], 'cambridge': [52.2053,0.1218]}
     conn = http.client.HTTPSConnection("api-metoffice.apiconnect.ibmcloud.com")
     userid = os.environ.get('X-IBM-Client-Id')
     key = os.environ.get('X-IBM-Client-Secret')
@@ -15,7 +17,11 @@ def get_weather_data():
     'accept': "application/json"
     }
 
-    conn.request("GET", '/v0/forecasts/point/daily?latitude=51.5073&longitude=0.1657&Metadata=true', headers=headers)
+    latitude = locations_dict[location][0]
+    longitude = locations_dict[location][1]
+
+    # conn.request("GET", '/v0/forecasts/point/daily?latitude=51.5073&longitude=0.1657&Metadata=true', headers=headers)
+    conn.request("GET", '/v0/forecasts/point/daily?latitude=' + latitude + '&longitude=' + longitude + '&Metadata=true', headers=headers)
     # Hyde Park, London 51.5073° N, 0.1657° W
     res = conn.getresponse()
     data = res.read()
@@ -85,4 +91,4 @@ class Rain:
 
 
 if __name__ == "__main__":
-    myrain = Rain(get_weather_data())
+    myrain = Rain(get_weather_data(location='london'))
