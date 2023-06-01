@@ -54,6 +54,7 @@ class Rain:
         self.today_max_temp = int(weather_today['dayUpperBoundMaxTemp'])
         self.today_min_temp = int(weather_today['dayLowerBoundMaxTemp'])
         self.today_rain_prob = int(weather_today['nightProbabilityOfPrecipitation'])
+        self.today_snow_prob = int(weather_today['nightProbabilityOfSnow'])
 
         weather_tomorrow = weather_data['features'][0]['properties']['timeSeries'][2]
         self.tomorrow_temp = int(weather_tomorrow['dayMaxScreenTemperature'])
@@ -71,8 +72,13 @@ class Rain:
 
         if self.today_temp > 25:
             self.hot_day = True
-        elif self.today_temp < 10:
+        elif self.today_temp < 10 and self.today_temp > 4:
             self.cold_day = True
+        elif self.today_temp < 4:
+            self.freezing_day = True
+
+        if self.today_snow_prob > 85:
+            self.snowy_day = True
 
 
 if __name__ == "__main__":
