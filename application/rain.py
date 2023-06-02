@@ -2,16 +2,12 @@ import http.client
 import os
 import json
 
+# establish a connection and retrieve location specific weather data in a function
 def get_weather_data(location):
     location = location.lower()
     locations_dict = {
         'london': [51.5073,0.1657], 
-        'oxford': [51.7520,1.2577], 
-        'cambridge': [52.2053,0.1218],
         'inverness': [57.4778,4.2247],
-        'poole': [50.7151,1.9873],
-        'aylesbury': [51.8163,0.8124],
-        'colchester': [51.8959,0.8919],
         }
 
     conn = http.client.HTTPSConnection("api-metoffice.apiconnect.ibmcloud.com")
@@ -31,15 +27,14 @@ def get_weather_data(location):
     # conn.request("GET", '/v0/forecasts/point/daily?latitude=51.5073&longitude=0.1657&Metadata=true', headers=headers)
     conn.request("GET", '/v0/forecasts/point/daily?latitude=' + latitude + '&longitude=' + longitude + '&Metadata=true', headers=headers)
     # Hyde Park, London 51.5073° N, 0.1657° W
-    print('data request sent to API')
     res = conn.getresponse()
     data = res.read()
     data_string = data.decode("utf-8")
-    print('data received from API')
     
     json_data = json.loads(data_string)
     return json_data
 
+# extract the data needed from the response and store as an object
 class Rain:
     def __init__(self, weather_data):
 
