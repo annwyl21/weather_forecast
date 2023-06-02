@@ -1,6 +1,8 @@
+/* imported fonts */
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap');
 
+/* CSS variables to define the colour scheme*/
 :root {
     --primary-color: #243010;
     --secondary-color: #f7b32b;
@@ -9,6 +11,7 @@
     --quinary-color: #ffffff;
 }
 
+/* CSS using the variables and using fallback colours */
 body {
     font-family: 'Dosis', sans-serif;
     color: var(--quinary-color, white);
@@ -16,6 +19,7 @@ body {
     margin-top: 40%;
 }
 
+/* CSS using em units, relative to the font size of the parent element */
 h1 {
     text-align: center;
     font-size: 2em;
@@ -27,6 +31,7 @@ p {
     font-size: 1em;
 }
 
+/* CSS for the location button */
 .btn-primary {
     background-color: var(--primary-color, pink);
     border: none; /* Remove border */
@@ -36,6 +41,7 @@ p {
     width: 100%;
 }
 
+/* CSS for the accordion */
 .accordion-button:not(.collapsed) {
   color: var(--tertiary-color, black);
   background-color: var(--secondary-color, yellow);
@@ -46,6 +52,7 @@ footer {
     margin: 10px;
 }
   
+/* CSS for the home page image and the overlaid title text */
 img {
     padding-top: 25px;
     padding-bottom: 25px;
@@ -56,16 +63,16 @@ img {
     position: relative;
   }
   
-  .image-container img {
-    border-radius: 50%; /* make the image round */
-    opacity: 0.4;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* centering the text */
-    color: var(--quinary-color, white);
-  }
+.image-container img {
+border-radius: 50%; /* make the image round */
+opacity: 0.4;
+}
+
+.overlay-text {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); /* centering the text */
+color: var(--quinary-color, white);
+}
   
