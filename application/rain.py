@@ -74,6 +74,9 @@ class Rain:
 
         if self.today_snow_prob > 85:
             self.snowy_day = True
+    
+    def convert_to_fahrenheit(self, celsius):
+        return int(celsius * 9/5 + 32)
 
 
 if __name__ == "__main__":
