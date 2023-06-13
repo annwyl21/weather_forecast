@@ -6,8 +6,8 @@ import json
 def get_weather_data(location):
     location = location.lower()
     locations_dict = {
-        'london': [51.5073,0.1657], 
-        'inverness': [57.4778,4.2247],
+        'london': [51.5073, 0.1657], 
+        'inverness': [57.4778, 4.2247],
         }
 
     conn = http.client.HTTPSConnection("api-metoffice.apiconnect.ibmcloud.com")
@@ -22,16 +22,18 @@ def get_weather_data(location):
 
     latitude = str(locations_dict[location][0])
     longitude = str(locations_dict[location][1])
-    print(latitude, longitude)
+    print('Identified location:', latitude, longitude)
 
     # conn.request("GET", '/v0/forecasts/point/daily?latitude=51.5073&longitude=0.1657&Metadata=true', headers=headers)
     conn.request("GET", '/v0/forecasts/point/daily?latitude=' + latitude + '&longitude=' + longitude + '&Metadata=true', headers=headers)
     # Hyde Park, London 51.5073° N, 0.1657° W
+    print('request sent')
     res = conn.getresponse()
     data = res.read()
     data_string = data.decode("utf-8")
     
     json_data = json.loads(data_string)
+    print('weather data retrieved')
     return json_data
 
 # extract the data needed from the response and store as an object
@@ -75,8 +77,8 @@ class Rain:
         if self.today_snow_prob > 85:
             self.snowy_day = True
     
-    def convert_to_fahrenheit(self, celsius):
-        return int(celsius * 9/5 + 32)
+    #def convert_to_fahrenheit(self, celsius):
+    #    return int(celsius * 9/5 + 32)
 
 
 if __name__ == "__main__":

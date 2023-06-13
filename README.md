@@ -15,7 +15,7 @@ The Automated Laundry Forecast Tool is an innovative utility designed to assist 
 4. **[Adaptive Bootstrap & CSS Styling](./application/static/styles/styles.css):** The Automated Laundry Forecast Tool employs bootstrap and CSS to dynamically modify the presentation of elements on the webpage, contributing to an engaging and intuitive user experience. This ensures the page layout is both aesthetically pleasing and informative, catering to the user's need for concise, clear, and actionable weather information.
 
 ### Home Page
-![Image - Screenshot of home page](application/static/images/screenshot_home.jpg)
+![Image - Screenshot of home page](application/static/images/screenshot_home_small.jpg)
 
 ### Results Page
-![Image - Screenshot of results page](application/static/images/screenshot_results.jpg)
+![Image - Screenshot of results page](application/static/images/screenshot_results_small.jpg)
