@@ -7,7 +7,7 @@ from application.form import LocationForm
 def index():
     return render_template('index.html', title='Line-dried Laundry')
 
-@app.route('/<location>')
+@app.route('/location/<location>')
 def detail(location):
     if location == 'inverness':
         weather_forecast = Rain(get_weather_data('inverness'))

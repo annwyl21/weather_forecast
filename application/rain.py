@@ -41,9 +41,6 @@ class Rain:
     def __init__(self, weather_data):
 
         weather_yesterday = weather_data['features'][0]['properties']['timeSeries'][0]
-        self.yesterday_temp = int(weather_yesterday['dayMaxScreenTemperature'])
-        self.yesterday_max_temp = int(weather_yesterday['dayUpperBoundMaxTemp'])
-        self.yesterday_min_temp = int(weather_yesterday['dayLowerBoundMaxTemp'])
         self.yesterday_rain_prob = int(weather_yesterday['nightProbabilityOfPrecipitation'])
 
         weather_today = weather_data['features'][0]['properties']['timeSeries'][1]
