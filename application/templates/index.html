@@ -2,22 +2,22 @@
 
 {% block main_content %}
 
-<div class="container-fluid">
 
-  <!-- Page Title -->
-  <div class="image-container">
-      <img src="{{ url_for('static', filename='images/laundry_long.png') }}" alt="line drying laundry" class="img-fluid">
-      <h1 class="overlay-text">line-dried laundry</h1>
-  </div>
 
-  <!-- Introduction to Page -->
-  <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight.</p>
+    <!-- Page Title -->
+    <div class="image-container">
+        <img src="{{ url_for('static', filename='images/laundry_long.png') }}" alt="line drying laundry" class="img-fluid">
+        <h1 class="overlay-text">line-dried laundry</h1>
+    </div>
 
-  <!-- Add 'select' input form for location with submit -->
-  <a class="btn btn-primary" href="./london" role="button">London</a>
-  <a class="btn btn-primary" href="./inverness" role="button">Inverness</a>
-  
-  </div>
-</div>
+    <!-- Introduction to Page -->
+    <p>Let's see if today's the perfect day to hang the laundry out in the sunshine, just waving in the gentle breeze with barely a drop of rain in sight.</p>
+
+    <!-- Add 'select' input form for location with submit -->
+    <a class="btn btn-primary" href="./london" role="button">London</a>
+    <a class="btn btn-primary" href="./inverness" role="button">Inverness</a>
+    
+    </div>
+
 
 {% endblock %}

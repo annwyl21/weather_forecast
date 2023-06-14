@@ -15,8 +15,7 @@
 body {
     font-family: 'Dosis', sans-serif;
     color: var(--quinary-color, white);
-    background-color: var(--quaternary-color, gray);
-    margin-top: 40%;
+    background-color: white;
 }
 
 /* CSS using em units, relative to the font size of the parent element */
@@ -47,9 +46,10 @@ p {
   background-color: var(--secondary-color, yellow);
 }
 
-footer {
+#footer {
     font-size: 0.5em;
     margin: 10px;
+    text-align: center;
 }
   
 /* CSS for the home page image and the overlaid title text */
@@ -76,3 +76,29 @@ transform: translate(-50%, -50%); /* centering the text */
 color: var(--quinary-color, white);
 }
   
+/* must be the last thing in the css to override the bootstrap css */
+/* @media screen and (min-width: 500px) {
+    .container-fluid {
+        max-width: 500px;
+        
+    }
+} */
+
+@media screen and (min-width: 320px) {
+    .app-wrapper {
+        max-width: 500px;
+        min-height: 580px;
+        margin: 40%, 0%;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        background-color: var(--quaternary-color, gray);
+    }
+
+    .container-fluid {
+        height: 100vh; /* set the height to the full viewport height */
+        display: flex; /* to allow centering using justify-content and align-items */
+        justify-content: center; /* center horizontally */
+        align-items: center; /* center vertically */
+    }
+}
