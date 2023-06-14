@@ -9,9 +9,11 @@ def index():
 
 @app.route('/<location>')
 def detail(location):
-    if location == 'london':
-        weather_forecast = Rain(get_weather_data('london'))
-        return render_template('detail.html', title='London Weather', location='London', weather_forecast=weather_forecast)
-    elif location == 'inverness':
+    if location == 'inverness':
         weather_forecast = Rain(get_weather_data('inverness'))
-        return render_template('detail.html', title='Inverness Weather', location='Inverness', weather_forecast=weather_forecast)
+        pagetitle='Inverness Weather'
+    else:
+        location == 'london'
+        weather_forecast = Rain(get_weather_data('london'))
+        pagetitle='London Weather'
+    return render_template('detail.html', title=pagetitle, location=location, weather_forecast=weather_forecast)

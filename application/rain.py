@@ -83,3 +83,4 @@ class Rain:
 
 if __name__ == "__main__":
     myrain = Rain(get_weather_data(location='london'))
+    print(myrain)
