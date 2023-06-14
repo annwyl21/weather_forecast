@@ -12,7 +12,7 @@ The Automated Laundry Forecast Tool is an innovative utility designed to assist 
 
 3. **[Responsive Display based on API Results](./application/templates/detail.html) :** With the assimilated data, the tool generates a user-friendly interface that presents forecast results in a clear and concise manner. The tool's display varies responsively, reflecting the retrieved results from the MET Office API and thus providing the user with timely and pertinent information.
 
-4. **[Adaptive Bootstrap & CSS Styling](./application/static/styles/styles.css):** The Automated Laundry Forecast Tool employs bootstrap and CSS to dynamically modify the presentation of elements on the webpage, contributing to an engaging and intuitive user experience. This ensures the page layout is both aesthetically pleasing and informative, catering to the user's need for concise, clear, and actionable weather information.
+4. **[Adaptive Bootstrap & CSS Styling](./application/static/styles/styles.css):** The Automated Laundry Forecast Tool employs bootstrap and CSS to dynamically modify the presentation of elements on the webpage, contributing to an engaging and intuitive user experience. This ensures the page layout is both aesthetically pleasing and informative, catering to the user's need for concise, clear, and actionable weather information. The app also uses CSS to display the flask app as a mobile phone app on larger screens.
 
 ### Home Page
 ![Image - Screenshot of home page](application/static/images/screenshot_home_small.jpg)
