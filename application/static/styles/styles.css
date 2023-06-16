@@ -86,8 +86,8 @@ color: var(--quinary-color, white);
 
 @media screen and (min-width: 320px) {
     .app-wrapper {
-        max-width: 500px;
-        min-height: 580px;
+        width: 360px;
+        height: 600px;
         margin: 40%, 0%;
         padding: 20px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
