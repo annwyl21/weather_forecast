@@ -92,7 +92,8 @@ color: var(--quinary-color, white);
         padding: 20px;
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         border-radius: 10px;
-        background-color: var(--quaternary-color, gray);
+        background: linear-gradient(180deg, #0d6321 15%, #13e050 50%, #d8f115 100%);
+        /* background-image: url("application/static/images/summer.gif"); */
     }
 
     .container-fluid {
