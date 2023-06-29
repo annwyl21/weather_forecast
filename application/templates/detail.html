@@ -21,8 +21,11 @@
         <div class="accordion-body">
             Today's weather in {{ location }} is {{ weather_forecast.today_temp }}&#x2103;/ {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_temp) }}&#8457;
             <br>
-            Temperatures are between {{ weather_forecast.today_min_temp }}&#x2103; and {{ weather_forecast.today_max_temp }}&#x2103;
-            <br>
+            Temperatures are between
+            <ul>
+              <li> {{ weather_forecast.today_min_temp }}&#x2103; and {{ weather_forecast.today_max_temp }}&#x2103; </li>
+              <li>( {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_min_temp) }}&#8457; and {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_max_temp) }}&#8457; )</li>
+            </ul>
             Risk of Rain is {{ weather_forecast.today_rain_prob }}%
         </div>
       </div>
@@ -84,7 +87,7 @@
             {% elif weather_forecast.cold_day == True %}
             &#x1F415; Pop a coat on the dog, its chilly out there
             {% else %}
-            The weather today is pleasant for &#x1F415; walking at {{ weather_forecast.today_temp }}&#x2103;
+            The weather today is pleasant for &#x1F415; walking at {{ weather_forecast.today_temp }}&#x2103;/ {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_temp) }}&#8457;
             {% endif %}
         </div>
     </div>
@@ -127,10 +130,13 @@
     
         <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">
-                Today's weather in {{ location }} is {{ weather_forecast.today_temp }}&#x2103;
-                <br>
-                Temperatures are between {{ weather_forecast.today_min_temp }}&#x2103; and {{ weather_forecast.today_max_temp }}&#x2103;
-                <br>
+              Today's weather in {{ location }} is {{ weather_forecast.today_temp }}&#x2103;/ {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_temp) }}&#8457;
+              <br>
+                Temperatures are between
+                <ul>
+                  <li> {{ weather_forecast.today_min_temp }}&#x2103; and {{ weather_forecast.today_max_temp }}&#x2103; </li>
+                  <li>( {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_min_temp) }}&#8457; and {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_max_temp) }}&#8457; )</li>
+                </ul>
                 Risk of Rain is {{ weather_forecast.today_rain_prob }}%
             </div>
         </div>

@@ -30,6 +30,10 @@ p {
     font-size: 1em;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* CSS for the location button */
 .btn-primary {
     background-color: var(--primary-color, pink);
@@ -93,7 +97,14 @@ color: var(--quinary-color, white);
         box-shadow: 0 0 10px rgba(0,0,0,0.1);
         border-radius: 10px;
         background: linear-gradient(180deg, #0d6321 15%, #13e050 50%, #d8f115 100%);
-        /* background-image: url("application/static/images/summer.gif"); */
+        /* background-image: url('/static/images/summer_sized.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover; */
     }
 
     .container-fluid {
