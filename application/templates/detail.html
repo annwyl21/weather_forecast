@@ -19,7 +19,7 @@
 
       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
-            Today's weather in {{ location }} is {{ weather_forecast.today_temp }}&#x2103;
+            Today's weather in {{ location }} is {{ weather_forecast.today_temp }}&#x2103;/ {{ weather_forecast.convert_to_fahrenheit(weather_forecast.today_temp) }}&#8457;
             <br>
             Temperatures are between {{ weather_forecast.today_min_temp }}&#x2103; and {{ weather_forecast.today_max_temp }}&#x2103;
             <br>
